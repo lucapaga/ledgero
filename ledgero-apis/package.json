@@ -1,0 +1,21 @@
+{
+  "name": "ledgero-apis",
+  "version": "0.0.1",
+  "description": "seServer-side APIs (REST & HTTP) for Ledgero Application",
+  "main": "index.js",
+  "scripts": {
+    "start": "node it/lucapaga/ledgero-apis/server.js",
+    "test": "test"
+  },
+  "keywords": [
+    "Ledger",
+    "Finance",
+    "Hapi",
+    "Node"
+  ],
+  "author": "Luca Paganelli",
+  "license": "ISC",
+  "dependencies": {
+    "hapi": "^16.0.1"
+  }
+}
