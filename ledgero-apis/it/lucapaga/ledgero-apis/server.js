@@ -2,9 +2,10 @@
 
 const Hapi = require('hapi');
 
-const MovementRepository = require('./accounting/domain/repositories/movementRepository');
-const Account = require('./accounting/domain/model/account');
+//const MovementRepository = require('./accounting/domain/repositories/movementRepository');
+//const Account = require('./accounting/domain/model/account');
 
+const AccountReportService = require('./accounting/application/accountReportService');
 
 // Create a server with a host and port
 const server = new Hapi.Server();
@@ -18,23 +19,16 @@ server.route({
     method: 'GET',
     path:'/hello',
     handler: function (request, reply) {
-      var account = new Account("accountId", "accountName", "ownerUserId");
-      account
-        .actualBalance(new MovementRepository())
+      var ars = new AccountReportService();
+      ars.calculateActualBalance("accountId")
         .then((calculatedBalance) => {
-          return reply('Balance is: ' + calculatedBalance.value +
+          return reply('Balance is: ' + calculatedBalance.value.toHtml() +
                       ' on ' + calculatedBalance.numberOfMovements + ' movements');
         })
         .catch((error) => {
           console.error('An Error occurred! ', error);
           return reply('Error man...: ' + JSON.stringify(error));
         });
-        /*
-        calculatedBalance = {
-          numberOfMovements: 0;
-          value: new Value(0, Signum.MINUS, Currency.EURO);
-        };
-        */
     }
 });
 

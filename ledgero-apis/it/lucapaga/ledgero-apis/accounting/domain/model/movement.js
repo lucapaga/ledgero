@@ -13,4 +13,16 @@ exports = module.exports = internals.Movement = function (
   this._operationDate = operationDate;
   this._accountabilityDate = accountabilityDate;
   this._value = value;
+
+  this.operationDate = function() {
+    return this._operationDate;
+  };
+
+  this.accountabilityDate = function() {
+    return this._accountabilityDate;
+  };
+
+  this.value = function() {
+    return this._value;
+  };
 };

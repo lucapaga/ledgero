@@ -41,11 +41,12 @@ exports = module.exports = internals.Account = function (
   this._calculateActualBalance = function (movementList) {
     var calculatedBalance = {
       numberOfMovements: 0,
-      value: new Value(0, Signum.MINUS, Currency.EURO)
+      value: new Value(0, Signum.PLUS, Currency.EURO)
     };
     movementList.forEach((item, index, list) => {
       calculatedBalance.numberOfMovements++;
-      calculatedBalance.value = calculatedBalance.value.sum(item.value);
+      console.log("Item's structure: %s", JSON.stringify(item));
+      calculatedBalance.value = calculatedBalance.value.sum(item.value());
     });
     return calculatedBalance;
   };

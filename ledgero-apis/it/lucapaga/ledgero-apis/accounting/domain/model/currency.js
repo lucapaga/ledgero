@@ -5,13 +5,6 @@
 // Declare internals
 const internals = {};
 
-/*
-{
-  value: 0,
-  signum: Signum.MINUS,
-  currency: Currency.EURO
-})
-*/
 
 exports = module.exports = internals.Currency = {
   EURO: "EUR",
