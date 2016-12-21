@@ -10,14 +10,6 @@ const Account = require('../domain/model/account');
 const internals = {};
 
 exports = module.exports = internals.AccountReportService = function () {
-  // member variables
-  //this._accountId = accountId;
-
-  /*
-  this.instance = function() {
-    return new internals.AccountReportService();
-  };
-  */
 
   this.calculateActualBalance = function(accountId) {
     var accountRepo = new AccountRepository();

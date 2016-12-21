@@ -11,13 +11,6 @@ const Movement = require('../model/movement');
 const internals = {};
 
 exports = module.exports = internals.MovementRepository = function () {
-  // member variables
-
-  /*
-  this.instance = function() {
-    return new internals.MovementRepository();
-  };
-  */
 
   this.getAllMovementsForAccount = function (accountId) {
     return new Promise((resolve, reject) => {
