@@ -4,8 +4,8 @@
   "description": "seServer-side APIs (REST & HTTP) for Ledgero Application",
   "main": "index.js",
   "scripts": {
-    "start": "node it/lucapaga/ledgero-apis/server.js",
-    "test": "test"
+    "start": "node src/it/lucapaga/ledgero-apis/server.js",
+     "test": "karma start karma.conf.js"
   },
   "keywords": [
     "Ledger",
@@ -17,5 +17,11 @@
   "license": "ISC",
   "dependencies": {
     "hapi": "^16.0.1"
+  },
+  "devDependencies": {
+    "jasmine-core": "^2.5.2",
+    "karma": "^1.3.0",
+    "karma-chrome-launcher": "^2.0.0",
+    "karma-jasmine": "^1.1.0"
   }
 }
