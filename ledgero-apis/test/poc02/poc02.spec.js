@@ -1,4 +1,4 @@
-describe('poc01', function () {
+describe('poc02', function () {
 
   //beforeEach(module('calculatorApp'));
 
@@ -10,9 +10,9 @@ describe('poc01', function () {
   }));
   */
 
-  describe('poc01-01', function () {
-		it('1 + 1 should equal 2', function () {
-			expect(3).toBe(3);
+  describe('poc02-01', function () {
+		it('My name is "Luca"', function () {
+			expect("Luca").toBe("Luco");
 		});
 	});
 

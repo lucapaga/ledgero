@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node src/it/lucapaga/ledgero-apis/server.js",
-     "test": "karma start karma.conf.js"
+    "test": "karma start karma.conf.js"
   },
   "keywords": [
     "Ledger",
@@ -19,9 +19,23 @@
     "hapi": "^16.0.1"
   },
   "devDependencies": {
+    "babel-core": "^6.21.0",
+    "babel-loader": "^6.2.10",
+    "babel-preset-es2015": "^6.18.0",
+    "babelify": "^7.3.0",
+    "browserify": "^13.1.1",
     "jasmine-core": "^2.5.2",
     "karma": "^1.3.0",
+    "karma-babel-preprocessor": "^6.0.1",
+    "karma-browserify": "^5.1.0",
     "karma-chrome-launcher": "^2.0.0",
-    "karma-jasmine": "^1.1.0"
+    "karma-htmlfile-reporter": "^0.3.4",
+    "karma-jasmine": "^1.1.0",
+    "karma-junit-reporter": "^1.2.0",
+    "karma-phantomjs-launcher": "^1.0.2",
+    "karma-sourcemap-loader": "^0.3.7",
+    "karma-webpack": "^1.8.1",
+    "watchify": "^3.8.0",
+    "webpack": "^1.14.0"
   }
 }

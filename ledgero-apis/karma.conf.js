@@ -15,8 +15,8 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      'src/**/*.js',
-      'test/**/*.spec.js'
+      //'test/poc01/poc01.spec.js'
+      'test/all-tests.js'
     ],
 
 
@@ -28,14 +28,81 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
+      //'src/**/*.js': ['babel'],
+      //'test/**/*.js': ['babel']
+      //'src/**/*.js': ['webpack'],
+
+      //'test/poc01/poc01.spec.js': ['webpack']
+      'test/all-tests.js': ['webpack']
+
+      //'src/**/*.js': ['browserify'],
+      //'test/**/*.js': ['browserify']
+    },
+    /*
+    browserify: {
+      debug: true,
+      transform: [ 'babelify' ]
+    },
+    */
+
+    /*
+    babelPreprocessor: {
+      options: {
+        presets: ['es2015'],
+        sourceMap: 'inline'
+      },
+      filename: function (file) {
+        return file.originalPath.replace(/\.js$/, '.es5.js');
+      },
+      sourceFileName: function (file) {
+        return file.originalPath;
+      }
+    },
+    */
+
+    webpack: {
+      /*
+      entry: {},
+      output: {
+        path: './build/webpack/test',
+        filename: "bundle.js"
+      },
+      */
+//      devtool: 'inline-source-map',
+      plugins: [],
+      module: {
+        loaders: [
+          {
+            test: /\.js$/,
+            exclude: /(node_modules|bower_components)/,
+            loader: 'babel-loader',
+            query: {
+              presets: ['es2015']
+            }
+          }
+        ]
+      }
     },
 
+    /*
+    webpackMiddleware: {
+      stats: 'errors-only'
+    },
+    */
 
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['progress'],
-
+    reporters: ['junit', 'progress'],
+    junitReporter: {
+      outputDir: 'test-reports', // results will be saved as $outputDir/$browserName.xml
+      outputFile: 'karma-test-report.xml', // if included, results will be saved as $outputDir/$browserName/$outputFile
+      suite: 'it.lucapaga.ledgero-apis.tests', // suite will become the package name attribute in xml testsuite element
+      useBrowserName: false, // add browser name to report and classes names
+      nameFormatter: undefined, // function (browser, result) to customize the name attribute in xml testcase element
+      classNameFormatter: undefined, // function (browser, result) to customize the classname attribute in xml testcase element
+      properties: {} // key value pair of properties to add to the <properties> section of the report
+    },
 
     // web server port
     port: 9876,
@@ -56,12 +123,13 @@ module.exports = function(config) {
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['Chrome'],
+    browsers: ['PhantomJS'],
+    //browsers: ['Chrome'],
 
 
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
-    singleRun: false,
+    singleRun: true,
 
     // Concurrency level
     // how many browser should be started simultaneous

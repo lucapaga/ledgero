@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<testsuite name="PhantomJS 2.1.1 (Windows 8 0.0.0)" package="it.lucapaga.ledgero-apis.tests" timestamp="2017-01-03T17:32:23" id="0" hostname="pagaclaire-ltop" tests="2" errors="0" failures="1" time="0.008">
+  <properties>
+    <property name="browser.fullName" value="Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/538.1 (KHTML, like Gecko) PhantomJS/2.1.1 Safari/538.1"/>
+  </properties>
+  <testcase name="poc01 poc01-01 1 + 1 should equal 2" time="0.005" classname="it.lucapaga.ledgero-apis.tests.poc01"/>
+  <testcase name="poc02 poc02-01 My name is &quot;Luca&quot;" time="0.003" classname="it.lucapaga.ledgero-apis.tests.poc02">
+    <failure type="">Expected 'Luca' to be 'Luco'.
+test/all-tests.js:127:27
+loaded@http://localhost:9876/context.js:151:17
+</failure>
+  </testcase>
+  <system-out>
+    <![CDATA[
+]]>
+  </system-out>
+  <system-err/>
+</testsuite>
