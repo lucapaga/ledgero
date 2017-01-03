@@ -16,7 +16,7 @@ module.exports = function(config) {
     // list of files / patterns to load in the browser
     files: [
       //'test/poc01/poc01.spec.js'
-      'test/all-tests.js'
+      'src/all-tests.js'
     ],
 
 
@@ -33,7 +33,7 @@ module.exports = function(config) {
       //'src/**/*.js': ['webpack'],
 
       //'test/poc01/poc01.spec.js': ['webpack']
-      'test/all-tests.js': ['webpack']
+      'src/all-tests.js': ['webpack', 'sourcemap']
 
       //'src/**/*.js': ['browserify'],
       //'test/**/*.js': ['browserify']
@@ -68,17 +68,22 @@ module.exports = function(config) {
         filename: "bundle.js"
       },
       */
-//      devtool: 'inline-source-map',
+      devtool: 'inline-source-map',
+      target: 'node',
       plugins: [],
       module: {
         loaders: [
           {
             test: /\.js$/,
-            exclude: /(node_modules|bower_components)/,
+            //exclude: /(node_modules|bower_components)/,
             loader: 'babel-loader',
             query: {
               presets: ['es2015']
             }
+          },
+          {
+            test: /\.json$/,
+            loader: 'json-loader'
           }
         ]
       }
