@@ -10,6 +10,7 @@ srcsContext.keys().forEach(function(path) {
     }
 });
 */
+require('../node_modules/babel-polyfill/dist/polyfill.js');
 var testsContext = require.context("./", true, /\.spec\.js$/);
 testsContext.keys().forEach(function(path) {
     try {
