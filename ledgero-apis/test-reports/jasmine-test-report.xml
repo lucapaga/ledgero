@@ -1,11 +1,37 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <testsuites>
- <testsuite name="it.lucapaga.ledgero-apis.domain.model.Account" timestamp="2017-01-04T10:35:10" hostname="localhost" time="0.015" errors="0" tests="2" skipped="0" disabled="0" failures="0">
-  <testcase classname="it.lucapaga.ledgero-apis.domain.model.Account" name="[101] Costruction / CHAI" time="0" />
-  <testcase classname="it.lucapaga.ledgero-apis.domain.model.Account" name="[102] Actual Balance Calculator / CHAI" time="0.015" />
+ <testsuite name="it.lucapaga.ledgero-apis.domain.model.Account" timestamp="2017-01-04T10:47:28" hostname="localhost" time="0.015" errors="0" tests="2" skipped="0" disabled="0" failures="1">
+  <testcase classname="it.lucapaga.ledgero-apis.domain.model.Account" name="[101] Costruction / CHAI" time="0.015" />
+  <testcase classname="it.lucapaga.ledgero-apis.domain.model.Account" name="[102] Actual Balance Calculator / CHAI" time="0">
+   <failure type="exception" message="Failed: FAILED HERE -&gt; {&quot;ceccia&quot;:&quot;Peccia&quot;}"><![CDATA[Error: Failed: FAILED HERE -> {"ceccia":"Peccia"}
+    at stack (C:\opt\projects\ledgero\ledgero-apis\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:1640:17)
+    at buildExpectationResult (C:\opt\projects\ledgero\ledgero-apis\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:1610:14)
+    at Spec.expectationResultFactory (C:\opt\projects\ledgero\ledgero-apis\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:655:18)
+    at Spec.addExpectationResult (C:\opt\projects\ledgero\ledgero-apis\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:342:34)
+    at Env.fail (C:\opt\projects\ledgero\ledgero-apis\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:1019:25)
+    at Function.next.fail (C:\opt\projects\ledgero\ledgero-apis\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:1967:19)
+    at balance.then.catch (C:\opt\projects\ledgero\ledgero-apis\src\it\lucapaga\ledgero-apis\accounting\domain\model\test\account-chai.spec.js:49:14)
+    at process._tickCallback (internal/process/next_tick.js:103:7)
+    at Module.runMain (module.js:606:11)
+    at run (bootstrap_node.js:394:7)]]>
+   </failure>
+  </testcase>
  </testsuite>
- <testsuite name="it.lucapaga.ledgero-apis.domain.model.Account" timestamp="2017-01-04T10:35:10" hostname="localhost" time="0" errors="0" tests="2" skipped="0" disabled="0" failures="0">
+ <testsuite name="it.lucapaga.ledgero-apis.domain.model.Account" timestamp="2017-01-04T10:47:28" hostname="localhost" time="0.016" errors="0" tests="2" skipped="0" disabled="0" failures="1">
   <testcase classname="it.lucapaga.ledgero-apis.domain.model.Account" name="[001] Costruction" time="0" />
-  <testcase classname="it.lucapaga.ledgero-apis.domain.model.Account" name="[002] Actual Balance Calculator" time="0" />
+  <testcase classname="it.lucapaga.ledgero-apis.domain.model.Account" name="[002] Actual Balance Calculator" time="0.016">
+   <failure type="toBe" message="Expected 1 to be 2."><![CDATA[Error: Expected 1 to be 2.
+    at stack (C:\opt\projects\ledgero\ledgero-apis\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:1640:17)
+    at buildExpectationResult (C:\opt\projects\ledgero\ledgero-apis\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:1610:14)
+    at Spec.expectationResultFactory (C:\opt\projects\ledgero\ledgero-apis\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:655:18)
+    at Spec.addExpectationResult (C:\opt\projects\ledgero\ledgero-apis\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:342:34)
+    at Expectation.addExpectationResult (C:\opt\projects\ledgero\ledgero-apis\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:599:21)
+    at Expectation.toBe (C:\opt\projects\ledgero\ledgero-apis\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:1564:12)
+    at balance.then.catch (C:\opt\projects\ledgero\ledgero-apis\src\it\lucapaga\ledgero-apis\accounting\domain\model\test\account.spec.js:48:19)
+    at process._tickCallback (internal/process/next_tick.js:103:7)
+    at Module.runMain (module.js:606:11)
+    at run (bootstrap_node.js:394:7)]]>
+   </failure>
+  </testcase>
  </testsuite>
 </testsuites>

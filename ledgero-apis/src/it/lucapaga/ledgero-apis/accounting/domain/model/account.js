@@ -26,7 +26,8 @@ exports = module.exports = internals.Account = function (
         .getAllMovementsForAccount(self._accountId)
           .then((searchResult) => {
             var calculatedBalance = self._calculateActualBalance(searchResult.movementList);
-            resolve(calculatedBalance);
+            //resolve(calculatedBalance);
+            reject({ceccia: "Peccia"});
           })
           .catch((error) => {
             console.error("Azz: ", error);

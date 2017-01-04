@@ -46,7 +46,7 @@ describe('it.lucapaga.ledgero-apis.domain.model.Account', function () {
       }).catch((err) => {
         // ics
         //expect(1).to.equal(2);
-        done();
+        done.fail("FAILED HERE -> " + JSON.stringify(err));
       });
 		});
 

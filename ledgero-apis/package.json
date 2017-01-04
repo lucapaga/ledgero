@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "node src/it/lucapaga/ledgero-apis/server.js",
-    "test-mocha": "mocha src/**/*.spec.js --reporter mocha-junit-reporter --reporter-options mochaFile=./test-reports/mocha-test-report.xml",
+    "test": "mocha src/**/*-chai.spec.js --reporter mocha-junit-reporter --reporter-options mochaFile=./test-reports/mocha-test-report.xml",
     "test-jasmine-1": "jasmine JASMINE_CONFIG_PATH=src/jasmine.json",
-    "test": "node src/jasmine-launcher.js"
+    "test-j": "node src/jasmine-launcher.js"
   },
   "keywords": [
     "Ledger",

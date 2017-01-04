@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="Mocha Tests" time="2.003" tests="2" failures="2">
-  <testsuite name="Root Suite" timestamp="2017-01-04T08:40:20" tests="0" failures="0" time="0">
+<testsuites name="Mocha Tests" time="2.009" tests="2" failures="1">
+  <testsuite name="Root Suite" timestamp="2017-01-04T09:48:34" tests="0" failures="0" time="0">
   </testsuite>
-  <testsuite name="it.lucapaga.ledgero-apis.domain.model.Account" timestamp="2017-01-04T08:40:20" tests="2" failures="2" time="2.003">
-    <testcase name="it.lucapaga.ledgero-apis.domain.model.Account [001] Costruction" time="0" classname="[001] Costruction">
-      <failure><![CDATA[TypeError: expect(...).not.toBe is not a function
-    at Context.<anonymous> (src\it\lucapaga\ledgero-apis\accounting\domain\model\test\account.spec.js:22:24)]]></failure>
+  <testsuite name="it.lucapaga.ledgero-apis.domain.model.Account" timestamp="2017-01-04T09:48:34" tests="2" failures="1" time="2.009">
+    <testcase name="it.lucapaga.ledgero-apis.domain.model.Account [101] Costruction / CHAI" time="0" classname="[101] Costruction / CHAI">
     </testcase>
-    <testcase name="it.lucapaga.ledgero-apis.domain.model.Account [002] Actual Balance Calculator" time="2.003" classname="[002] Actual Balance Calculator">
+    <testcase name="it.lucapaga.ledgero-apis.domain.model.Account [102] Actual Balance Calculator / CHAI" time="2.009" classname="[102] Actual Balance Calculator / CHAI">
       <failure><![CDATA[Error: Timeout of 2000ms exceeded. For async tests and hooks, ensure "done()" is called; if returning a Promise, ensure it resolves.]]></failure>
     </testcase>
   </testsuite>
