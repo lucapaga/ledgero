@@ -1,22 +1,22 @@
 <?xml version="1.0"?>
-<testsuite name="PhantomJS 2.1.1 (Windows 8 0.0.0)" package="it.lucapaga.ledgero-apis.tests" timestamp="2017-01-03T20:37:49" id="0" hostname="pagaclaire-ltop" tests="2" errors="0" failures="0" time="0.007">
+<testsuite name="PhantomJS 2.1.1 (Windows 8 0.0.0)" package="it.lucapaga.ledgero-apis.tests" timestamp="2017-01-04T08:02:41" id="0" hostname="pagaclaire-ltop" tests="2" errors="0" failures="0" time="0.008">
   <properties>
     <property name="browser.fullName" value="Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/538.1 (KHTML, like Gecko) PhantomJS/2.1.1 Safari/538.1"/>
   </properties>
   <testcase name="it.lucapaga.ledgero-apis.domain.model.Account [001] Costruction" time="0.002" classname="it.lucapaga.ledgero-apis.tests.it.lucapaga.ledgero-apis.domain.model.Account"/>
-  <testcase name="it.lucapaga.ledgero-apis.domain.model.Account [002] Actual Balance Calculator" time="0.005" classname="it.lucapaga.ledgero-apis.tests.it.lucapaga.ledgero-apis.domain.model.Account"/>
+  <testcase name="it.lucapaga.ledgero-apis.domain.model.Account [002] Actual Balance Calculator" time="0.006" classname="it.lucapaga.ledgero-apis.tests.it.lucapaga.ledgero-apis.domain.model.Account"/>
   <system-out>
     <![CDATA[PhantomJS 2.1.1 (Windows 8 0.0.0) LOG: 'Ready to go'
-,PhantomJS 2.1.1 (Windows 8 0.0.0) LOG: 'Item's structure: %s', '{"_operationDate":"2017-01-03T20:37:49.916Z","_accountabilityDate":"2017-01-03T20:37:49.916Z","_value":{"_value":12,"_signum":"+","_currency":"EUR"}}'
+,PhantomJS 2.1.1 (Windows 8 0.0.0) LOG: 'Item's structure: %s', '{"_operationDate":"2017-01-04T08:02:41.528Z","_accountabilityDate":"2017-01-04T08:02:41.528Z","_value":{"_value":12,"_signum":"+","_currency":"EUR"}}'
 ,PhantomJS 2.1.1 (Windows 8 0.0.0) LOG: 'Value is: $s', '0'
 ,PhantomJS 2.1.1 (Windows 8 0.0.0) LOG: 'Value is: $s', '12'
-,PhantomJS 2.1.1 (Windows 8 0.0.0) LOG: 'Item's structure: %s', '{"_operationDate":"2017-01-03T20:37:49.916Z","_accountabilityDate":"2017-01-03T20:37:49.916Z","_value":{"_value":11,"_signum":"+","_currency":"EUR"}}'
+,PhantomJS 2.1.1 (Windows 8 0.0.0) LOG: 'Item's structure: %s', '{"_operationDate":"2017-01-04T08:02:41.528Z","_accountabilityDate":"2017-01-04T08:02:41.528Z","_value":{"_value":11,"_signum":"+","_currency":"EUR"}}'
 ,PhantomJS 2.1.1 (Windows 8 0.0.0) LOG: 'Value is: $s', '12'
 ,PhantomJS 2.1.1 (Windows 8 0.0.0) LOG: 'Value is: $s', '23'
-,PhantomJS 2.1.1 (Windows 8 0.0.0) LOG: 'Item's structure: %s', '{"_operationDate":"2017-01-03T20:37:49.916Z","_accountabilityDate":"2017-01-03T20:37:49.916Z","_value":{"_value":18,"_signum":"-","_currency":"EUR"}}'
+,PhantomJS 2.1.1 (Windows 8 0.0.0) LOG: 'Item's structure: %s', '{"_operationDate":"2017-01-04T08:02:41.528Z","_accountabilityDate":"2017-01-04T08:02:41.528Z","_value":{"_value":18,"_signum":"-","_currency":"EUR"}}'
 ,PhantomJS 2.1.1 (Windows 8 0.0.0) LOG: 'Value is: $s', '23'
 ,PhantomJS 2.1.1 (Windows 8 0.0.0) LOG: 'Value is: $s', '5'
-,PhantomJS 2.1.1 (Windows 8 0.0.0) LOG: 'Item's structure: %s', '{"_operationDate":"2017-01-03T20:37:49.916Z","_accountabilityDate":"2017-01-03T20:37:49.916Z","_value":{"_value":1,"_signum":"+","_currency":"EUR"}}'
+,PhantomJS 2.1.1 (Windows 8 0.0.0) LOG: 'Item's structure: %s', '{"_operationDate":"2017-01-04T08:02:41.528Z","_accountabilityDate":"2017-01-04T08:02:41.528Z","_value":{"_value":1,"_signum":"+","_currency":"EUR"}}'
 ,PhantomJS 2.1.1 (Windows 8 0.0.0) LOG: 'Value is: $s', '5'
 ,PhantomJS 2.1.1 (Windows 8 0.0.0) LOG: 'Value is: $s', '6'
 
