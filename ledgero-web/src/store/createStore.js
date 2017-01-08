@@ -35,7 +35,9 @@ export default (initialState = {}) => {
       ...enhancers
     )
   )
+  console.log("createStore :: Store Created :: Store: ", store);
   store.asyncReducers = {}
+  console.log("createStore :: booting :: Store: ", store);
 
   // To unsubscribe, invoke `store.unsubscribeHistory()` anytime
   store.unsubscribeHistory = browserHistory.listen(updateLocation(store))
@@ -43,6 +45,7 @@ export default (initialState = {}) => {
   if (module.hot) {
     module.hot.accept('./reducers', () => {
       const reducers = require('./reducers').default
+      console.log("createStore :: module.hot.accept :: Store: ", store);
       store.replaceReducer(reducers(store.asyncReducers))
     })
   }

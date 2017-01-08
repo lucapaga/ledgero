@@ -1,7 +1,7 @@
 import { injectReducer } from '../../store/reducers'
 
 export default (store) => ({
-  path : 'accounts',
+  path : 'accountList',
   /*  Async getComponent is only invoked when route matches   */
   getComponent (nextState, cb) {
     /*  Webpack - use 'require.ensure' to create a split point
@@ -9,16 +9,18 @@ export default (store) => ({
     require.ensure([], (require) => {
       /*  Webpack - use require callback to define
           dependencies for bundling   */
-      const accountListContainer = require('./containers/AccountListContainer').default
-      const accountReducer = require('./reducers/account').default
+      const AccountListContainer = require('./containers/AccountListContainer').default
+      const reducer = require('./modules/accountList').default
 
-      /*  Add the reducer to the store on key 'account'  */
-      injectReducer(store, { key: 'accounts', accountReducer })
+      /*  Add the reducer to the store on key 'counter'  */
+      console.log("Configuring reducer: ", reducer);
+      injectReducer(store, { key: 'accountList', reducer });
+      console.log("DONE!");
 
       /*  Return getComponent   */
-      cb(null, accountListContainer)
+      cb(null, AccountListContainer);
 
     /* Webpack named bundle   */
-    }, 'accounts')
+    }, 'accountList');
   }
 })

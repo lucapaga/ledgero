@@ -26,6 +26,9 @@ export const AccountList = (props) => {
   return (
     <div style={{ margin: '0 auto' }} >
       <h2>My Accounts</h2>
+      <button className='btn btn-default' onClick={props.refreshAccountList}>
+        Refresh!
+      </button>
 
       {listOfAccounts}
     </div>
@@ -34,7 +37,9 @@ export const AccountList = (props) => {
 
 AccountList.propTypes = {
   accountList     : React.PropTypes.shape({
-                      accountId: React.PropTypes.string
+                      accountId   : React.PropTypes.string,
+                      name        : React.PropTypes.string,
+                      description : React.PropTypes.string
                     })
 }
 
