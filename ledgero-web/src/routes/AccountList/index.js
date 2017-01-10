@@ -10,11 +10,12 @@ export default (store) => ({
       /*  Webpack - use require callback to define
           dependencies for bundling   */
       const AccountListContainer = require('./containers/AccountListContainer').default
-      const reducer = require('./modules/accountList').default
+      //const reducer = require('./modules/accountList').default
+      const reducer = require('./reducers').default
 
       /*  Add the reducer to the store on key 'counter'  */
       console.log("Configuring reducer: ", reducer);
-      injectReducer(store, { key: 'accountList', reducer });
+      injectReducer(store, { key: 'accountListReduced', reducer });
       console.log("DONE!");
 
       /*  Return getComponent   */

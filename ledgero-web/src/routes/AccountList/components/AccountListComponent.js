@@ -1,5 +1,6 @@
 import React from 'react'
 
+// Presentational Component: view-only
 export const AccountListComponent = (props) => {
   let listOfAccounts = null;
 
@@ -10,9 +11,9 @@ export const AccountListComponent = (props) => {
     </div>
   );
 
-  if(props.accountList.accountList){
-    console.log("Here we have some accounts: ", props.accountList.accountList);
-    let innerList = props.accountList.accountList.map((anAccount) => {
+  if(props.accountList){
+    console.log("Here we have some accounts: ", props.accountList);
+    let innerList = props.accountList.map((anAccount) => {
       console.log("Looping... Account: ", anAccount);
       return (
         <li>
@@ -23,6 +24,7 @@ export const AccountListComponent = (props) => {
 
     listOfAccounts = (
       <div>
+        <p>#<b>{props.nrOfAccounts}</b> accounts found!</p>
         <ul>
           {innerList}
         </ul>
@@ -31,6 +33,7 @@ export const AccountListComponent = (props) => {
     );
   }
 
+  // here's the 'final' JSX
   return (
     <div style={{ margin: '0 auto' }} >
       <h2>My Accounts</h2>
@@ -46,27 +49,17 @@ export const AccountListComponent = (props) => {
   );
 }
 
-// counter     : React.PropTypes.number.isRequired,
-/*
-accountList     : React.PropTypes.shape({
-                    accountList: React.PropTypes.arrayOf(
-                      React.PropTypes.shape({
-                        accountId   : React.PropTypes.string.isRequired,
-                        name        : React.PropTypes.string.isRequired,
-                        description : React.PropTypes.string.isRequired
-                      }).isRequired
-                    ).isRequired
-                  }).isRequired
-*/
+// ReactJS type-checking is only active on development
 AccountListComponent.propTypes = {
   doLoadMyAccounts : React.PropTypes.func.isRequired,
-  accountList     : React.PropTypes.arrayOf(
+  accountList      : React.PropTypes.arrayOf(
                         React.PropTypes.shape({
                           accountId   : React.PropTypes.string.isRequired,
                           name        : React.PropTypes.string.isRequired,
                           description : React.PropTypes.string.isRequired
                         }).isRequired
-                      ).isRequired
+                      ).isRequired,
+  nrOfAccounts     : React.PropTypes.number.isRequired
 }
 
 export default AccountListComponent

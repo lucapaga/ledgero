@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import { doLoadMyAccounts } from '../modules/accountList'
+import { doLoadMyAccounts } from '../actions'
 
 /*  This is a container component. Notice it does not contain any JSX,
     nor does it import React. This component is **only** responsible for
@@ -8,18 +8,23 @@ import { doLoadMyAccounts } from '../modules/accountList'
 
 import AccountListComponent from '../components/AccountListComponent'
 
-/*  Object of action creators (can also be function that returns object).
-    Keys will be passed as props to presentational components. Here we are
-    implementing our wrapper around increment; the component doesn't care   */
-
+// 1-1 mapping of actions' methods
 const mapDispatchToProps = {
   doLoadMyAccounts
 }
 
-//   counter : state.counter
-const mapStateToProps = (state) => ({
-  accountList: state.accountList
-})
+/*   state.accountListReduced: that 'accountListReduced' depends on
+      injectReducer(store, { key: 'accountListReduced', reducer }); key you use
+*/
+const mapStateToProps = (state) => {
+  console.log("Mapping state to props, state is: ", state);
+  let stateToReturn = {
+    accountList:  state.accountListReduced.accountList,
+    nrOfAccounts: state.accountListReduced.nrOfResults
+  };
+  console.log("Returning ", stateToReturn);
+  return stateToReturn;
+}
 
 /*  Note: mapStateToProps is where you should use `reselect` to create selectors, ie:
 

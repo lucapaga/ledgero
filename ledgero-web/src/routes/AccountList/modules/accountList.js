@@ -43,8 +43,7 @@ export const actions = {
 // ------------------------------------
 const ACTION_HANDLERS = {
   [LOAD_MY_ACCOUNTS]    : (state, action) => {
-    console.log("Returning stubbed account list");
-    return {
+    let retVal = {
       accountList: [{
           accountId: "28393298",
           name: "Root",
@@ -53,8 +52,15 @@ const ACTION_HANDLERS = {
           accountId: "65664252",
           name: "Pippo",
           description: "My Custom"
-      }]
+        }, {
+          accountId: "3787887328",
+          name: "Pluto",
+          description: "My Caztom"
+      }],
+      nrOfResults: 3
     };
+    console.log("Returning stubbed account list ", retVal);
+    return retVal;
   }
 }
 
@@ -70,7 +76,8 @@ const initialState = {
       accountId: "65664252",
       name: "Pippo",
       description: "My Custom"
-  }]
+  }],
+  nrOfResults: 2
 };
 export default function accountListReducer (state = initialState, action) {
   const handler = ACTION_HANDLERS[action.type]
