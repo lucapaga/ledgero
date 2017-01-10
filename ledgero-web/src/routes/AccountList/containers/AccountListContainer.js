@@ -20,9 +20,10 @@ const mapStateToProps = (state) => {
   console.log("Mapping state to props, state is: ", state);
   let stateToReturn = {
     accountList:  state.accountListReduced.accountList,
-    nrOfAccounts: state.accountListReduced.nrOfResults
+    nrOfAccounts: state.accountListReduced.nrOfResults,
+    isLoadingAccounts: state.accountListReduced.isLoadingAccounts
   };
-  console.log("Returning ", stateToReturn);
+  console.log("Returning mapping: ", stateToReturn);
   return stateToReturn;
 }
 

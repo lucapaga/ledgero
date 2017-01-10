@@ -10,7 +10,8 @@ const ACTION_HANDLERS = {
     console.log("Reducer working on event: ", action);
     let retVal = {
       accountList : action.accountList,
-      nrOfResults : action.nrOfResults
+      nrOfResults : action.nrOfResults,
+      isLoadingAccounts: false
     };
     return Object.assign({}, state, retVal);
   },
@@ -18,7 +19,8 @@ const ACTION_HANDLERS = {
     console.log("Reducer working on event: ", action);
     let retVal = {
       accountList : [],
-      nrOfResults : 0
+      nrOfResults : 0,
+      isLoadingAccounts: true
     };
     return Object.assign({}, state, retVal);
   }

@@ -2,6 +2,17 @@ import React, { Component, PropTypes } from 'react'
 import { browserHistory, Router } from 'react-router'
 import { Provider } from 'react-redux'
 
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import {deepOrange500} from 'material-ui/styles/colors';
+
+const muiTheme = getMuiTheme({
+  palette: {
+    accent1Color: deepOrange500,
+  },
+});
+
 class AppContainer extends Component {
   static propTypes = {
     routes : PropTypes.object.isRequired,
@@ -17,9 +28,11 @@ class AppContainer extends Component {
 
     return (
       <Provider store={store}>
-        <div style={{ height: '100%' }}>
-          <Router history={browserHistory} children={routes} />
-        </div>
+        <MuiThemeProvider muiTheme={muiTheme}>
+          <div style={{ height: '100%' }}>
+            <Router history={browserHistory} children={routes} />
+          </div>
+        </MuiThemeProvider>
       </Provider>
     )
   }

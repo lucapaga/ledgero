@@ -1,4 +1,10 @@
-import React from 'react'
+import React from 'react';
+
+import AppBar from 'material-ui/AppBar';
+import RaisedButton from 'material-ui/RaisedButton';
+import {List, ListItem} from 'material-ui/List';
+import ClassSVGIcon from 'material-ui/svg-icons/action/class';
+
 
 // Presentational Component: view-only
 export const AccountListComponent = (props) => {
@@ -11,36 +17,49 @@ export const AccountListComponent = (props) => {
     </div>
   );
 
-  if(props.accountList){
-    console.log("Here we have some accounts: ", props.accountList);
-    let innerList = props.accountList.map((anAccount) => {
-      console.log("Looping... Account: ", anAccount);
-      return (
-        <li>
-          ID: {anAccount.accountId} - OPEN
-        </li>
-      );
-    });
-
-    listOfAccounts = (
+  if(props.isLoadingAccounts && props.isLoadingAccounts === true) {
+    listOfAccounts=(
       <div>
-        <p>#<b>{props.nrOfAccounts}</b> accounts found!</p>
-        <ul>
-          {innerList}
-        </ul>
-        <p><i>Select one Account to proceed</i></p>
+        <p><i>LOADING ...</i></p>
       </div>
     );
   }
+  else {
+    if(props.accountList){
+      console.log("Here we have " + props.nrOfAccounts + " account(s): ", props.accountList);
+      let innerList = props.accountList.map((anAccount, idx) => {
+        console.log("Looping... Account #", idx, ": ", anAccount);
+        return (
+          <ListItem   primaryText={ <span> {anAccount.accountId} [ <b> {anAccount.name} </b> ] </span> }
+                      secondaryText={anAccount.description}
+                      leftIcon={<ClassSVGIcon />}
+                      />
+          /*
+          <li>
+            ID: {anAccount.accountId} - OPEN
+          </li>
+          */
+        );
+      });
+
+      listOfAccounts = (
+        <div>
+          <p>#<b>{props.nrOfAccounts}</b> accounts found!</p>
+          <List>
+            {innerList}
+          </List>
+          <p><i>Select one Account to proceed</i></p>
+        </div>
+      );
+    }
+  }
+
 
   // here's the 'final' JSX
   return (
     <div style={{ margin: '0 auto' }} >
-      <h2>My Accounts</h2>
       {' '}
-      <button className='btn btn-default' onClick={props.doLoadMyAccounts}>
-        Refresh!
-      </button>
+      <RaisedButton primary={true} label="REFRESH" onTouchTap={props.doLoadMyAccounts} />
 
       <hr/>
 
@@ -59,7 +78,8 @@ AccountListComponent.propTypes = {
                           description : React.PropTypes.string.isRequired
                         }).isRequired
                       ).isRequired,
-  nrOfAccounts     : React.PropTypes.number.isRequired
+  nrOfAccounts     : React.PropTypes.number.isRequired,
+  isLoadingAccounts: React.PropTypes.bool
 }
 
 export default AccountListComponent

@@ -14,14 +14,14 @@ export default (store) => ({
       const reducer = require('./reducers').default
 
       /*  Add the reducer to the store on key 'counter'  */
-      console.log("Configuring reducer: ", reducer);
+      //console.log("Configuring reducer: ", reducer);
       injectReducer(store, { key: 'accountListReduced', reducer });
-      console.log("DONE!");
+      //console.log("DONE!");
 
       /*  Return getComponent   */
       cb(null, AccountListContainer);
 
     /* Webpack named bundle   */
-    }, 'accountList');
+  }, 'accountListWPB');
   }
 })
