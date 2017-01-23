@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import { doLoadMyAccounts } from '../actions'
+import { doLoadMyAccounts, doLoadMocked } from '../actions'
 
 /*  This is a container component. Notice it does not contain any JSX,
     nor does it import React. This component is **only** responsible for
@@ -10,7 +10,8 @@ import AccountListComponent from '../components/AccountListComponent'
 
 // 1-1 mapping of actions' methods
 const mapDispatchToProps = {
-  doLoadMyAccounts
+  doLoadMyAccounts,
+  doLoadMocked
 }
 
 /*   state.accountListReduced: that 'accountListReduced' depends on

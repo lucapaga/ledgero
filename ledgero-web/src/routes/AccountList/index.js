@@ -22,6 +22,6 @@ export default (store) => ({
       cb(null, AccountListContainer);
 
     /* Webpack named bundle   */
-  }, 'accountListWPB');
+    }, 'accountListWPB');
   }
 })

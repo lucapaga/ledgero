@@ -20,7 +20,9 @@ export const Header = () => (
             iconElementLeft={
               <IconMenu
                     iconButtonElement={
-                      <IconButton><Hamburger /></IconButton>
+                      <IconButton iconStyle={{ color: 'white' }}>
+                        <Hamburger />
+                      </IconButton>
                     }
                     targetOrigin={{horizontal: 'left', vertical: 'top'}}
                     anchorOrigin={{horizontal: 'left', vertical: 'top'}}

@@ -30,7 +30,12 @@ export const AccountListComponent = (props) => {
       let innerList = props.accountList.map((anAccount, idx) => {
         console.log("Looping... Account #", idx, ": ", anAccount);
         return (
-          <ListItem   primaryText={ <span> {anAccount.accountId} [ <b> {anAccount.name} </b> ] </span> }
+          <ListItem   primaryText={
+                        <span>
+                          <b> {anAccount.name} </b>
+                          <span style={{fontSize: '10pt', paddingLeft: '5px'}}> - {anAccount.accountId}  </span>
+                        </span>
+                      }
                       secondaryText={anAccount.description}
                       leftIcon={<ClassSVGIcon />}
                       />
@@ -44,11 +49,12 @@ export const AccountListComponent = (props) => {
 
       listOfAccounts = (
         <div>
-          <p>#<b>{props.nrOfAccounts}</b> accounts found!</p>
+          <div style={{ marginTop: '5px', marginLeft: '10px' }}>
+            <i>Select one from your <b>{props.nrOfAccounts}</b> accounts</i>
+          </div>
           <List>
             {innerList}
           </List>
-          <p><i>Select one Account to proceed</i></p>
         </div>
       );
     }
@@ -58,12 +64,20 @@ export const AccountListComponent = (props) => {
   // here's the 'final' JSX
   return (
     <div style={{ margin: '0 auto' }} >
-      {' '}
-      <RaisedButton primary={true} label="REFRESH" onTouchTap={props.doLoadMyAccounts} />
-
-      <hr/>
-
       {listOfAccounts}
+
+      <div style={{ width: '100%' }}>
+        <RaisedButton primary={true}
+                      label="REFRESH"
+                      onTouchTap={props.doLoadMyAccounts}
+                      style={{ marginLeft: '10px' }}
+                      />
+        <RaisedButton primary={true}
+                      label="LOAD MOCKED"
+                      onTouchTap={props.doLoadMocked}
+                      style={{ marginLeft: '10px' }}
+                      />
+      </div>
     </div>
   );
 }
@@ -71,6 +85,7 @@ export const AccountListComponent = (props) => {
 // ReactJS type-checking is only active on development
 AccountListComponent.propTypes = {
   doLoadMyAccounts : React.PropTypes.func.isRequired,
+  doLoadMocked     : React.PropTypes.func.isRequired,
   accountList      : React.PropTypes.arrayOf(
                         React.PropTypes.shape({
                           accountId   : React.PropTypes.string.isRequired,
