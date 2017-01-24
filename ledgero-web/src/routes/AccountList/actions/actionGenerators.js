@@ -24,3 +24,12 @@ export const createMockedAccountListAction = () => {
         nrOfResults : 3
       };
 }
+
+
+export const publishRealAccountListAction = (restResponse) => {
+  return {
+        type        : LOAD_MY_ACCOUNTS,
+        accountList : restResponse.accountList,
+        nrOfResults : restResponse.nrOfAccounts
+      };
+}

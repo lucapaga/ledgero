@@ -30,15 +30,16 @@ export const AccountListComponent = (props) => {
       let innerList = props.accountList.map((anAccount, idx) => {
         console.log("Looping... Account #", idx, ": ", anAccount);
         return (
-          <ListItem   primaryText={
-                        <span>
-                          <b> {anAccount.name} </b>
-                          <span style={{fontSize: '10pt', paddingLeft: '5px'}}> - {anAccount.accountId}  </span>
-                        </span>
-                      }
-                      secondaryText={anAccount.description}
-                      leftIcon={<ClassSVGIcon />}
-                      />
+          <ListItem
+              primaryText={
+                <span>
+                  <b> {anAccount.name} </b>
+                  <span style={{fontSize: '10pt', paddingLeft: '5px'}}> - {anAccount.accountId}  </span>
+                </span>
+              }
+              secondaryText={anAccount.description}
+              leftIcon={<ClassSVGIcon />}
+              />
           /*
           <li>
             ID: {anAccount.accountId} - OPEN
@@ -66,7 +67,7 @@ export const AccountListComponent = (props) => {
     <div style={{ margin: '0 auto' }} >
       {listOfAccounts}
 
-      <div style={{ width: '100%' }}>
+      <div style={{ width: '100%', marginTop: '10px' }}>
         <RaisedButton primary={true}
                       label="REFRESH"
                       onTouchTap={props.doLoadMyAccounts}

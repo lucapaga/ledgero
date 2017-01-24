@@ -7,6 +7,7 @@ const Hapi = require('hapi');
 
 const AccountReportService = require('./accounting/application/accountReportService');
 const MovementService = require('./accounting/application/movementService');
+const MyAccountService = require('./accounting/application/myAccountService');
 
 // Create a server with a host and port
 const server = new Hapi.Server();
@@ -14,6 +15,7 @@ server.connection({
     host: 'localhost',
     port: 8000
 });
+
 
 server.route({
     method: 'GET',
@@ -27,6 +29,21 @@ server.route({
         })
         .catch((error) => {
           console.error('An Error occurred! ', error);
+          return reply('Error man...: ' + JSON.stringify(error));
+        });
+    }
+});
+
+server.route({
+    method: 'GET',
+    path: '/myaccounts',
+    handler: function (request, reply) {
+      var ms = new MyAccountService();
+      ms.loadAccounts()
+        .then((accountsListDescriptor) => {
+          return reply(JSON.stringify(accountsListDescriptor));
+        })
+        .catch((error) => {
           return reply('Error man...: ' + JSON.stringify(error));
         });
     }

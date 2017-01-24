@@ -1,7 +1,7 @@
 import fetch from 'isomorphic-fetch'
 
 import { LOAD_MY_ACCOUNTS, LOADING_MY_ACCOUNTS } from './actionTypes'
-import { createLoadingAction, createMockedAccountListAction } from './actionGenerators'
+import { createLoadingAction, createMockedAccountListAction, publishRealAccountListAction } from './actionGenerators'
 
 
 export const doLoadMyAccounts = () => {
@@ -9,16 +9,17 @@ export const doLoadMyAccounts = () => {
   return (dispatch, getState) => {
     dispatch(createLoadingAction());
 
-    var restURL = "";
+    var restURL = "/rest/myaccounts";
 
     // with this Promise we simulate an aynch REST call!
-    /*
     return fetch(restURL)
-      .then(response => response.json())
-      .then(json =>
-        dispatch(receivePosts(subreddit, json))
-      );
-    */
+      .then(response => {
+        console.log("Here I received: ", response);
+        return response.json();
+      }).then(json => {
+        console.log("Then JSON is: ", json);
+        return dispatch(publishRealAccountListAction(json));
+      });
   }
 }
 
