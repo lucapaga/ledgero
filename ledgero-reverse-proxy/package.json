@@ -1,0 +1,16 @@
+{
+  "name": "ledgero-reverse-proxy",
+  "version": "1.0.0",
+  "description": "reverse proxy with hapi",
+  "main": "index.js",
+  "scripts": {
+    "start": "node reverse-proxy.js",
+    "test": "test"
+  },
+  "author": "luca.paga",
+  "license": "ISC",
+  "dependencies": {
+    "h2o2": "^5.4.0",
+    "hapi": "^16.1.0"
+  }
+}
